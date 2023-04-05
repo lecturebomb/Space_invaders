@@ -37,7 +37,7 @@ import org.newdawn.spaceinvaders.entity.ShotEntity;
 public class Game extends Canvas 
 {
 	/** The stragey that allows us to use accelerate page flipping */
-	private BufferStrategy strategy;
+	private BufferStrategy strategy;//game
 	/** True if the game is currently "running", i.e. the game loop is looping */
 	private boolean gameRunning = true;
 	/** The list of all the entities that exist in our game */
