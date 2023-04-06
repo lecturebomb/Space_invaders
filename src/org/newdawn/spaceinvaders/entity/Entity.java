@@ -59,7 +59,13 @@ public abstract class Entity {
 		x += (delta * dx) / 1000;
 		y += (delta * dy) / 1000;
 	}
-	
+	public void setX(float x){
+		this.x=x;
+	}
+
+	public void setY(float x){
+		this.y=y;
+	}
 	/**
 	 * Set the horizontal speed of this entity
 	 * 

@@ -14,10 +14,8 @@ import java.util.ArrayList;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-import org.newdawn.spaceinvaders.entity.AlienEntity;
-import org.newdawn.spaceinvaders.entity.Entity;
-import org.newdawn.spaceinvaders.entity.ShipEntity;
-import org.newdawn.spaceinvaders.entity.ShotEntity;
+import org.newdawn.spaceinvaders.entity.*;
+
 
 /**
  * The main hook of our game. This class with both act as a manager
@@ -37,7 +35,7 @@ import org.newdawn.spaceinvaders.entity.ShotEntity;
 public class Game extends Canvas 
 {
 	/** The stragey that allows us to use accelerate page flipping */
-	private BufferStrategy strategy;
+	private BufferStrategy strategy;//game
 	/** True if the game is currently "running", i.e. the game loop is looping */
 	private boolean gameRunning = true;
 	/** The list of all the entities that exist in our game */
@@ -46,6 +44,7 @@ public class Game extends Canvas
 	private ArrayList removeList = new ArrayList();
 	/** The entity representing the player */
 	private Entity ship;
+	private Entity item;
 	/** The speed at which the player's ship should move (pixels/sec) */
 	private double moveSpeed = 300;
 	/** The time at which last fired a shot */
@@ -149,7 +148,8 @@ public class Game extends Canvas
 		// create the player ship and place it roughly in the center of the screen
 		ship = new ShipEntity(this,"sprites/ship.gif",370,550);
 		entities.add(ship);
-		
+		item = new ItemEntity(this,"sprites/item.gif", 170,400);
+		entities.add(item);
 		// create a block of aliens (5 rows, by 12 aliens, spaced evenly)
 		alienCount = 0;
 		for (int row=0;row<5;row++) {
